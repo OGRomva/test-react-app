@@ -1,1 +1,1 @@
-export * from './ISatellite'
+export * from './ISatellite';

@@ -1,12 +1,11 @@
-import { Axios, AxiosResponse } from "axios"
+import { $api } from ".";
 import { USE_SERVER_CONN } from "../config"
-import ISatellite from "../types/ISatellite"
-import $api from "./http"
+import { ISatellite } from "../types";
 
-export default class SatelliteService {
-    static async fetchSatellites(): Promise<AxiosResponse<ISatellite[]> | ISatellite[]> {
+export class SatelliteService {
+    static async fetchSatellites(): Promise<ISatellite[]> {
         if (USE_SERVER_CONN) {
-            return $api.get<ISatellite[]>('/get_satellite')
+            return (await $api.get<ISatellite[]>('/get_satellite')).data;
         } else {
             return [
                 {

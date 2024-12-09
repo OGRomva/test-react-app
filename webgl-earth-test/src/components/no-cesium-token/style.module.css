@@ -1,0 +1,7 @@
+.NoSeciumToken {
+    width: 85%;
+    border-radius: 20%;
+    background-color: var(--error-background-color);
+    color: var(--error-text-color);
+    font-size: medium;
+}
